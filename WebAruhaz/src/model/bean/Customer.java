@@ -8,25 +8,12 @@ package model.bean;
  *
  */
 public class Customer {
-	private String id_number;//request to remove
 	private String name;
-	//add private String password;
+	private String password;
 	private int balance;
 	private boolean regular_customer;
 	private String home_address;
 	private String city_address;
-	/**
-	 * @return the id_number
-	 */
-	public String getId_number() {
-		return id_number;
-	}
-	/**
-	 * @param id_number the id_number to set
-	 */
-	public void setId_number(String id_number) {
-		this.id_number = id_number;
-	}
 	/**
 	 * @return the name
 	 */
@@ -39,19 +26,19 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	/*
+	
 	 /**
 	 * @return the name
-	 *
+	 */
 	public String getPassword() {
 		return name;
 	}
 	/**
 	 * @param name the name to set
-	 *
+	 */
 	public void setPassword(String name) {
 		this.name = name;
-	 */
+	}
 	/**
 	 * @return the balance
 	 */
