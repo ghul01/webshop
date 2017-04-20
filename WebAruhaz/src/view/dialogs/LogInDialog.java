@@ -1,28 +1,24 @@
 /**
  * 
  */
-package view;
+package view.dialogs;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JMenuBar;
+import javax.swing.JDialog;
 
 /**
  * @author Attila
  *
  */
-public class WebShopMenuBar extends JMenuBar implements ActionListener {
-
-	public WebShopMenuBar(Runnable runnable) {
-		// TODO Auto-generated constructor stub
-	}
+public class LogInDialog extends JDialog implements ActionListener {
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
 	}

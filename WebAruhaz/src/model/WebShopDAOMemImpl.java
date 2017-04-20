@@ -7,6 +7,6 @@ package model;
  * @author Attila
  *
  */
-public class WebShopMemImpl implements WebShopDAO {
+public class WebShopDAOMemImpl implements WebShopDAO {
 
 }

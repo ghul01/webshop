@@ -3,6 +3,9 @@
  */
 package controller;
 
+import model.*;
+import view.WebShopGUI;
+
 /**
  * @author Attila
  *
@@ -14,10 +17,15 @@ package controller;
 public class WebShopController {
 	private static String username;
 	private static String password;
+	private WebShopDAO dao = new WebShopDAOMemImpl();
 	
+	/**
+	 * Elindítja Az alkalmazás desktopra specializált user interface-ét.
+	 */
 	public void startDesktop() {
-		// TODO Auto-generated method stub
+		WebShopGUI vc = new WebShopGUI(this);
 		
+		 vc.startGUI();
 	}
 
 	/**
