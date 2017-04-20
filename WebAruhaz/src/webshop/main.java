@@ -3,6 +3,8 @@
  */
 package webshop;
 
+import controller.WebShopController;
+
 /**
  * @author Attila
  *
@@ -18,11 +20,16 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LogIn();
-		StartApp(username,password);
+		StartApp();
 	}
 
-	private static void StartApp(String username2, String password2) {
-		// TODO Auto-generated method stub
+	private static void StartApp() {
+		WebShopController controller = new WebShopController();
+		
+		controller.setUsername(username);
+		controller.setPassword(password);
+		
+		controller.startDesktop();
 		
 	}
 
