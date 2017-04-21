@@ -22,7 +22,7 @@ public class WebShopGUI {
 		
 	}
 	
-	public WebShopGUI(WebShopController webShopController) {
+	public WebShopGUI(WebShopController controller) {
 		this.controller = controller;
 	}
 

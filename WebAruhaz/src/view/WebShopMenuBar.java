@@ -20,7 +20,6 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	 * 
 	 */
 	private static final long serialVersionUID = -143840565706992902L;
-	@SuppressWarnings("unused")
 	private WebShopGUI gui;
 	
 	public WebShopMenuBar(WebShopGUI gui) {

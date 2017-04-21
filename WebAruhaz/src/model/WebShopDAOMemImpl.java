@@ -16,8 +16,26 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	@SuppressWarnings("unused")
 	private static int id;
 	
-	List<Customer> customers = new ArrayList<Customer>();
-	List<City> cities = new ArrayList<City>();
+	public List<Customer> customers = new ArrayList<Customer>();
+	@SuppressWarnings("serial")
+	public List<City> cities = new ArrayList<City>() {{
+		add(new City(){{
+			setCity_name("Békéscsaba");
+			setZip_code("5600");
+		}});
+		add(new City(){{
+			setCity_name("Orosháza");
+			setZip_code("5900");
+		}});
+		add(new City(){{
+			setCity_name("Szeged");
+			setZip_code("6700");
+		}});
+		add(new City(){{
+			setCity_name("Hódmezõvásárhely");
+			setZip_code("6800");
+		}});
+		}};
 	/**
 	 * Hozzáad egy {@link Customer}-t az adattárhoz.
      *
@@ -55,6 +73,15 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	public boolean logInCustomer(Customer customer) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public List<City> getCities() {
+		/*List<City> cities = new ArrayList<City>();
+		City city = new City();
+		city.setCity_name("Békéscsaba");
+		city.setZip_code("5600");
+		cities.add(city);*/
+		return cities;
 	} 
 	
 	

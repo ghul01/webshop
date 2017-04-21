@@ -13,9 +13,12 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.bean.City;
+import model.bean.Customer;
 import view.Labels;
 import view.WebShopGUI;
 
@@ -101,6 +104,10 @@ public class SignInDialog extends JDialog implements ActionListener {
 		
 		settingPanel.add(new JLabel(Labels.city_address));
 		cityCombo = new JComboBox<String>();
+		
+		for (City city:gui.getController().getCities()){
+			cityCombo.addItem(city.getZip_code());
+		}
 		settingPanel.add(cityCombo);
 
 		settingPanel.add(new JLabel(Labels.home_address));
@@ -111,8 +118,76 @@ public class SignInDialog extends JDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if (cancelButton == e.getSource()) {
+		if (okButton == e.getSource()){
+			if (nameTextField.getText().isEmpty()){
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_name_is_required,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			if (passwordTextField.getText().isEmpty()){
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_password_is_required,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			if(!passwordTextField.getText()
+					.equals(reEnteredPasswordTextField.getText())){
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.pasword_not_equal,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			if(cityCombo.getSelectedItem() == null){
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_city_address_is_required,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			if (homeAddressTextField.getText().isEmpty()){
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_home_address_is_required,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+			
+			//Létrehozzuk a customert
+			Customer customer = new Customer();
+			customer.setName(nameTextField.getText());
+			customer.setPassword(passwordTextField.getText());
+			customer.setBalance(0);
+			customer.setRegular_customer(false);
+			customer.setCity_address(cityCombo.getSelectedItem().toString());
+			customer.setHome_address(homeAddressTextField.getText());
+			
+			if(!gui.getController().signUpCustomer(customer)){
+				// Ha az addCustomer false-t ad vissza akkor egy hibaüzenetet
+                // írunk ki egy error dialogra(JOptionPane.ERROR_MESSAGE)
+                JOptionPane.showMessageDialog(
+                        gui.getWindow(),
+                        Labels.customer_exists,
+                        Labels.error,
+                        JOptionPane.ERROR_MESSAGE);
+			} else {
+				// Ha az addCustomer true-t ad vissza akkor bezárjuk a dialógust
+                setVisible(false);
+			}
+			
+		} else if (cancelButton == e.getSource()) {
             // cancel esetén egyszerûen bezárjuk az ablakot
             setVisible(false);
         }

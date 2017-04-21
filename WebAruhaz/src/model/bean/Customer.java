@@ -86,4 +86,7 @@ public class Customer {
 	public void setCity_address(String city_address) {
 		this.city_address = city_address;
 	}
+	public String toString(){
+		return name;
+	}
 }

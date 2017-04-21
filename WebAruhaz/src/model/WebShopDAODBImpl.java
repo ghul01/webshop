@@ -1,5 +1,8 @@
 package model;
 
+import java.util.List;
+
+import model.bean.City;
 import model.bean.Customer;
 
 public class WebShopDAODBImpl implements WebShopDAO {
@@ -16,4 +19,10 @@ public class WebShopDAODBImpl implements WebShopDAO {
 		return false;
 	}
 //TODO Implementálás
+
+	@Override
+	public List<City> getCities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

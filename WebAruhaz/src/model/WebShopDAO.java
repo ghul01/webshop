@@ -3,6 +3,8 @@
  */
 package model;
 
+import java.util.List;
+
 import model.bean.*;
 
 /**
@@ -12,4 +14,5 @@ import model.bean.*;
 public interface WebShopDAO {
 	public boolean signUpCustomer(Customer customer);
 	public boolean logInCustomer(Customer customer);
+	public List<City> getCities();
 }

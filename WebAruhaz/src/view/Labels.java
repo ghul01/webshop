@@ -29,7 +29,15 @@ public class Labels {
     public final static String log_in = "Bejelentkezés";
     public final static String sign_in = "Regisztráció";
     
-    // Customer labels
+    // Sign in labels
+    public final static String customer_name_is_required = "Felhasználó nevet meg kell adni!";
+    public final static String customer_password_is_required = "Jelszót meg kell adni!";
+    public final static String pasword_not_equal = "A megadott jelszavak nem eggyeznek!";
+    public final static String customer_home_address_is_required = "Lakcímet meg kell adni!";
+    public final static String customer_city_address_is_required = "Irányítószámot meg kell adni!";
+    public final static String customer_exists = "Már regisztráltak ezzel a felhasználó névvel!";
+    
+    // Customer labels    
     public final static String user_name = "Felhasználó név";
     public final static String password = "Jelszó";
     public final static String re_enter_password = "Jelszó még egyszer";
