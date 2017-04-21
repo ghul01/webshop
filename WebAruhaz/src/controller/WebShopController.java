@@ -9,6 +9,7 @@ import model.*;
 import model.bean.City;
 import model.bean.Customer;
 import view.WebShopGUI;
+import webshop.main;
 
 /**
  * @author Attila
@@ -19,8 +20,6 @@ import view.WebShopGUI;
  * köti össze. Itt található az üzleti logika (business logic) is.
  */
 public class WebShopController {
-	private static String username;
-	private static String password;
 	private WebShopDAO dao = new WebShopDAOMemImpl();
 	
 	/**
@@ -31,40 +30,15 @@ public class WebShopController {
 		
 		 vc.startGUI();
 	}
-
-	/**
-	 * @return the username
-	 */
-	public static String getUsername() {
-		return username;
-	}
-
-	/**
-	 * @param username the username to set
-	 */
-	public static void setUsername(String username) {
-		WebShopController.username = username;
-	}
-
-	/**
-	 * @return the password
-	 */
-	public static String getPassword() {
-		return password;
-	}
-
-	/**
-	 * @param password the password to set
-	 */
-	public static void setPassword(String password) {
-		WebShopController.password = password;
-	}
-
 	public boolean signUpCustomer(Customer customer){
 		return dao.signUpCustomer(customer);
 	}
 	public boolean logInCustomer(Customer customer){
-		return dao.logInCustomer(customer);
+		boolean rvIsValid = dao.logInCustomer(customer);
+		if (rvIsValid){
+			main.setUsername(customer.getName());
+		}
+		return rvIsValid;
 	}
 	public List<City> getCities(){
 		return dao.getCities();

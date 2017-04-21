@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import view.dialogs.LogInDialog;
+import view.dialogs.LogOutDialog;
 import view.dialogs.SignInDialog;
 
 /**
@@ -26,7 +28,7 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 		super();
 		this.gui = gui;
 		
-		createMenuPoint(Labels. user,Labels.log_in, Labels.sign_in);
+		createMenuPoint(Labels.user, Labels.log_in, Labels.sign_in, Labels.log_out);
 	}
 
     private void createMenuPoint(String name, String... subnames) {
@@ -57,8 +59,13 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
-		
-		if(actionCommand.equals(Labels.sign_in)){
+		if(actionCommand.equals(Labels.log_in)){
+			new LogInDialog(gui,true);
+			gui.updateTitle();
+		} else if (actionCommand.equals(Labels.log_out)){
+			new LogOutDialog(gui,true);
+			gui.updateTitle();
+		} else if (actionCommand.equals(Labels.sign_in)){
 			new SignInDialog(gui, true);
 		}
 		// TODO Auto-generated method stub

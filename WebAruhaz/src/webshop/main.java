@@ -10,6 +10,8 @@ import controller.WebShopController;
  *
  */
 public class main {
+
+	private static String username;
 	/**
 	 * @param args
 	 */
@@ -24,5 +26,18 @@ public class main {
 		
 		controller.startDesktop();
 		
+	}
+	/**
+	 * @return the username
+	 */
+	public static String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username the username to set
+	 */
+	public static void setUsername(String newUsername) {
+		username = newUsername;
 	}
 }

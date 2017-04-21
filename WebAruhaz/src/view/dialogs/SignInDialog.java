@@ -175,7 +175,7 @@ public class SignInDialog extends JDialog implements ActionListener {
 			customer.setHome_address(homeAddressTextField.getText());
 			
 			if(!gui.getController().signUpCustomer(customer)){
-				// Ha az addCustomer false-t ad vissza akkor egy hibaüzenetet
+				// Ha az signUpCustomer false-t ad vissza akkor egy hibaüzenetet
                 // írunk ki egy error dialogra(JOptionPane.ERROR_MESSAGE)
                 JOptionPane.showMessageDialog(
                         gui.getWindow(),
@@ -183,7 +183,7 @@ public class SignInDialog extends JDialog implements ActionListener {
                         Labels.error,
                         JOptionPane.ERROR_MESSAGE);
 			} else {
-				// Ha az addCustomer true-t ad vissza akkor bezárjuk a dialógust
+				// Ha az signUpCustomer true-t ad vissza akkor bezárjuk a dialógust
                 setVisible(false);
 			}
 			

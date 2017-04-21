@@ -24,23 +24,28 @@ public class Labels {
 	public static final String main_window_title_format = "Web Shop (%1$s)";
     public static final String main_window_title_unknown_user = "ismeretlen";
     
-    // LogIn labels
+    // Log in labels
     public final static String user = "Felhasználó";
     public final static String log_in = "Bejelentkezés";
-    public final static String sign_in = "Regisztráció";
+    public final static String customer_not_exists = "A felhasználó nem található, ellenõrizd a megadott adatokat!";
+    
+    // Log out labels
+    public final static String log_out = "Kijelentkezés";
+    public final static String log_out_succes = "Sikeresen kijelentkeztél!";
     
     // Sign in labels
+    public final static String sign_in = "Regisztráció";
     public final static String customer_name_is_required = "Felhasználó nevet meg kell adni!";
     public final static String customer_password_is_required = "Jelszót meg kell adni!";
     public final static String pasword_not_equal = "A megadott jelszavak nem eggyeznek!";
     public final static String customer_home_address_is_required = "Lakcímet meg kell adni!";
     public final static String customer_city_address_is_required = "Irányítószámot meg kell adni!";
     public final static String customer_exists = "Már regisztráltak ezzel a felhasználó névvel!";
+    public final static String re_enter_password = "Jelszó még egyszer";
     
     // Customer labels    
     public final static String user_name = "Felhasználó név";
     public final static String password = "Jelszó";
-    public final static String re_enter_password = "Jelszó még egyszer";
     public final static String balance = "Egyenleg";
     public final static String regular_customer = "Törzsvásárló";
     public final static String home_address = "Lakcím";

@@ -71,16 +71,18 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	}
 	@Override
 	public boolean logInCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean rvIsValid = false;
+		for (Customer c : customers) {
+			if (c.getName().equals(customer.getName())){
+				if (c.getPassword().equals(customer.getPassword()))
+					rvIsValid = true;
+				break;
+			}
+		}
+		return rvIsValid;
 	}
 	@Override
 	public List<City> getCities() {
-		/*List<City> cities = new ArrayList<City>();
-		City city = new City();
-		city.setCity_name("Békéscsaba");
-		city.setZip_code("5600");
-		cities.add(city);*/
 		return cities;
 	} 
 	
