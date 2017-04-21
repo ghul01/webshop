@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 
 import view.Labels;
 import view.WebShopGUI;
-import webshop.main;
+import webshop.Main;
 
 /**
  * @author Attila
@@ -44,7 +44,7 @@ public class LogOutDialog extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (okButton == e.getSource()) {
-			main.setUsername(null);
+			Main.setUsername(null);
             setVisible(false);
         }
 	}

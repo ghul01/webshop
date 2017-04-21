@@ -9,7 +9,7 @@ import model.*;
 import model.bean.City;
 import model.bean.Customer;
 import view.WebShopGUI;
-import webshop.main;
+import webshop.Main;
 
 /**
  * @author Attila
@@ -36,7 +36,7 @@ public class WebShopController {
 	public boolean logInCustomer(Customer customer){
 		boolean rvIsValid = dao.logInCustomer(customer);
 		if (rvIsValid){
-			main.setUsername(customer.getName());
+			Main.setUsername(customer.getName());
 		}
 		return rvIsValid;
 	}

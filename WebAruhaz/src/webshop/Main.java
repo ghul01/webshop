@@ -9,7 +9,7 @@ import controller.WebShopController;
  * @author Attila
  *
  */
-public class main {
+public class Main {
 
 	private static String username;
 	/**

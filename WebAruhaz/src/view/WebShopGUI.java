@@ -8,7 +8,7 @@ import java.awt.Container;
 import javax.swing.JFrame;
 
 import controller.WebShopController;
-import webshop.main;
+import webshop.Main;
 
 /**
  * @author Attila
@@ -36,7 +36,7 @@ public class WebShopGUI {
 		// Elõállítjuk az alkalmazás címsorát
         //   - ha meg volt adva usernév, akkor azt írjuk bele,
         //   - ha nem, akkor "ismeretlen"-t tüntetünk fel
-		String title = String.format(Labels.main_window_title_format, main.getUsername() == null ? Labels.main_window_title_unknown_user : main.getUsername());
+		String title = String.format(Labels.main_window_title_format, Main.getUsername() == null ? Labels.main_window_title_unknown_user : Main.getUsername());
 		
 		// A JFrame egy magas szintû konténer, egy ablak címmel és kerettel.
         window = new JFrame(title);
@@ -85,7 +85,7 @@ public class WebShopGUI {
     }
 	
     public void updateTitle(){
-		String title = String.format(Labels.main_window_title_format, main.getUsername() == null ? Labels.main_window_title_unknown_user : main.getUsername());
+		String title = String.format(Labels.main_window_title_format, Main.getUsername() == null ? Labels.main_window_title_unknown_user : Main.getUsername());
 		window.setTitle(title);
     }
 }
