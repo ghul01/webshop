@@ -4,6 +4,7 @@
 package controller;
 
 import model.*;
+import model.bean.Customer;
 import view.WebShopGUI;
 
 /**
@@ -56,4 +57,11 @@ public class WebShopController {
 		WebShopController.password = password;
 	}
 
+	public boolean signUpCustomer(Customer customer){
+		return dao.signUpCustomer(customer);
+	}
+	public boolean logInCustomer(Customer customer){
+		return dao.logInCustomer(customer);
+	}
+	
 }

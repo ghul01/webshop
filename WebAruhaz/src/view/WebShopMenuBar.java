@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import view.dialogs.SignInDialog;
+
 /**
  * @author Attila
  *
@@ -54,7 +56,12 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
+		String actionCommand = e.getActionCommand();
+		
+		if(actionCommand.equals(Labels.sign_in)){
+			new SignInDialog(gui, true);
+		}
 		// TODO Auto-generated method stub
 
 	}
