@@ -26,18 +26,17 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	 /**
-	 * @return the name
+	 * @return the password
 	 */
 	public String getPassword() {
-		return name;
+		return password;
 	}
 	/**
-	 * @param name the name to set
+	 * @param name the password to set
 	 */
-	public void setPassword(String name) {
-		this.name = name;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	/**
 	 * @return the balance
