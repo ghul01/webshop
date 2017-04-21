@@ -18,11 +18,6 @@ public class WebShopGUI {
 	private JFrame window;
 	private WebShopController controller;
 
-	private static void LogIn() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	public WebShopGUI(WebShopController controller) {
 		this.controller = controller;
 	}
