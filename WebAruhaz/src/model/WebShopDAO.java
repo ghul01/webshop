@@ -17,4 +17,5 @@ public interface WebShopDAO {
 	public List<City> getCities();
 	public List<Category> getCategories();
 	public List<Product> getProducts();
+	public List<Product> getProductsByCategory(Category category);
 }

@@ -81,9 +81,9 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	public List<Product> products = new ArrayList<Product>(){{
 		add(new Product(){{
 			setProduct_id(1);
-			setProduct_name("Son Goku akciófigura");
-			setUnit_price(9001);
-			setStock(1);
+			setProduct_name("Faragott ló");
+			setUnit_price(1000);
+			setStock(10);
 			setKategory_name("Saját készítésû");
 		}});
 	}};
@@ -145,6 +145,16 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	@Override
 	public List<Product> getProducts() {
 		return products;
+	}
+	@Override
+	public List<Product> getProductsByCategory(Category category) {
+		List<Product> categorizedProducts = new ArrayList<Product>();
+		for (Product product : products) {
+			if (product.getCategory_name().equals(category.getName())) {
+				categorizedProducts.add(product);
+			}
+		}
+		return categorizedProducts;
 	} 
 	
 	

@@ -9,11 +9,14 @@ import java.util.List;
 
 import javax.swing.*;
 
+import model.bean.Product;
+import model.bean.Category;
+
 import view.dialogs.LogInDialog;
 import view.dialogs.LogOutDialog;
 import view.dialogs.SignInDialog;
-import model.bean.Product;
 import view.tablemodels.ProductTableModel;
+
 import webshop.Main;
 
 /**
@@ -106,7 +109,18 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 			gui.updateTitle();
 		} else if (actionCommand.equals(Labels.sign_in)){
 			new SignInDialog(gui, true);
-		} 
+		} else for (Category category : gui.getController().getCategories()) {
+			if (actionCommand.equals(category.getName())){
+				List<Product> products = gui.getController().getProductsByCategory(category);
+				
+				JTable table = new JTable(new ProductTableModel(products));
+				
+				JScrollPane container = new JScrollPane(table);
+				
+				gui.setActualContent(container);
+				break;
+			}
+		}
 		System.out.println(actionCommand);
 		// TODO Auto-generated method stub
 

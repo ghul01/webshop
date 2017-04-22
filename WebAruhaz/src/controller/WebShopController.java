@@ -51,4 +51,7 @@ public class WebShopController {
 	public List<Product> getProducts(){
 		return dao.getProducts();
 	}
+	public List<Product> getProductsByCategory(Category category){
+		return dao.getProductsByCategory(category);
+	}
 }
