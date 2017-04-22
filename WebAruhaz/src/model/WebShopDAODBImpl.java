@@ -5,6 +5,7 @@ import java.util.List;
 import model.bean.Category;
 import model.bean.City;
 import model.bean.Customer;
+import model.bean.Product;
 
 public class WebShopDAODBImpl implements WebShopDAO {
 
@@ -29,6 +30,12 @@ public class WebShopDAODBImpl implements WebShopDAO {
 
 	@Override
 	public List<Category> getCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getProducts() {
 		// TODO Auto-generated method stub
 		return null;
 	}

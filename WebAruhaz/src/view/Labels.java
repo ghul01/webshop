@@ -57,4 +57,11 @@ public class Labels {
     public final static String regular_customer = "Törzsvásárló";
     public final static String home_address = "Lakcím";
     public final static String city_address = "Irányítószám";
+    
+    // Product labels
+    public final static String product_id = "ID";
+    public final static String product_name = "Termék név";
+    public final static String product_unit_price = "egység ár";
+    public final static String product_stock = "Készlet";
+    public final static String product_category = "Kategória";
 }

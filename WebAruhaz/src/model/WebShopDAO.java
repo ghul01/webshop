@@ -16,4 +16,5 @@ public interface WebShopDAO {
 	public boolean logInCustomer(Customer customer);
 	public List<City> getCities();
 	public List<Category> getCategories();
+	public List<Product> getProducts();
 }

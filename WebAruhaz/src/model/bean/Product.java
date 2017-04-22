@@ -7,7 +7,7 @@ package model.bean;
  * @author Attila
  *
  */
-public class Products {
+public class Product {
 	private int product_id;
 	private String product_name;
 	private int unit_price;
@@ -64,7 +64,7 @@ public class Products {
 	/**
 	 * @return the kategory_name
 	 */
-	public String getKategory_name() {
+	public String getCategory_name() {
 		return kategory_name;
 	}
 	/**

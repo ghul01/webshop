@@ -76,6 +76,19 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 			setName("Jármû");
 		}});
 	}};
+	
+	@SuppressWarnings("serial")
+	public List<Product> products = new ArrayList<Product>(){{
+		add(new Product(){{
+			setProduct_id(1);
+			setProduct_name("Son Goku akciófigura");
+			setUnit_price(9001);
+			setStock(1);
+			setKategory_name("Saját készítésû");
+		}});
+	}};
+	
+	
 	/**
 	 * Hozzáad egy {@link Customer}-t az adattárhoz.
      *
@@ -128,6 +141,10 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	@Override
 	public List<Category> getCategories() {
 		return categories;
+	}
+	@Override
+	public List<Product> getProducts() {
+		return products;
 	} 
 	
 	

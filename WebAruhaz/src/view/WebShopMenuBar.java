@@ -5,12 +5,15 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.*;
 
 import view.dialogs.LogInDialog;
 import view.dialogs.LogOutDialog;
 import view.dialogs.SignInDialog;
+import model.bean.Product;
+import view.tablemodels.ProductTableModel;
 import webshop.Main;
 
 /**
@@ -35,13 +38,16 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
     	this.add(store);
     	JMenuItem all = new JMenuItem(Labels.list_all_product); 
     	store.add(all);
+    	all.addActionListener(this);
     	JMenuItem news = new JMenuItem(Labels.list_new_products);
     	store.add(news);
+    	news.addActionListener(this);
     	JMenu categoryMenu = new JMenu(Labels.list_by_categories);
     	store.add(categoryMenu);
     	for (model.bean.Category category:gui.getController().getCategories()){
-    		JMenuItem item = new JMenuItem(category.getName());
-    		categoryMenu.add(item);
+    		JMenuItem menuItem = new JMenuItem(category.getName());
+    		categoryMenu.add(menuItem);
+    		menuItem.addActionListener(this);
     	}
 	}
 
@@ -73,7 +79,17 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
-		if(actionCommand.equals(Labels.log_in)){
+		if (actionCommand.equals(Labels.list_all_product)) {
+			List<Product> products = gui.getController().getProducts();
+			
+			JTable table = new JTable(new ProductTableModel(products));
+			
+			JScrollPane container = new JScrollPane(table);
+			
+			gui.setActualContent(container);
+		} else if (actionCommand.equals(Labels.list_new_products)) {
+			
+		} else if (actionCommand.equals(Labels.log_in)){
 			if (Main.getUsername()==null){
 			new LogInDialog(gui,true);
 			gui.updateTitle();
@@ -90,7 +106,8 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 			gui.updateTitle();
 		} else if (actionCommand.equals(Labels.sign_in)){
 			new SignInDialog(gui, true);
-		}
+		} 
+		System.out.println(actionCommand);
 		// TODO Auto-generated method stub
 
 	}

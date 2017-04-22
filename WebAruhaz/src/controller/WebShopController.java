@@ -9,6 +9,7 @@ import model.*;
 import model.bean.Category;
 import model.bean.City;
 import model.bean.Customer;
+import model.bean.Product;
 import view.WebShopGUI;
 import webshop.Main;
 
@@ -46,5 +47,8 @@ public class WebShopController {
 	}
 	public List<Category> getCategories(){
 		return dao.getCategories();
+	}
+	public List<Product> getProducts(){
+		return dao.getProducts();
 	}
 }
