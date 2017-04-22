@@ -49,4 +49,16 @@ public class WebShopDAODBImpl implements WebShopDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String getBalance(String userName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean increaseBalance(String userName, Integer value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

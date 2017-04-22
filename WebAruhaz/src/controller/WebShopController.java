@@ -54,4 +54,10 @@ public class WebShopController {
 	public List<Product> getProductsByCategory(Category category){
 		return dao.getProductsByCategory(category);
 	}
+	public String getBalance(String userName) {
+		return dao.getBalance(userName)+" HUF";
+	}
+	public boolean increaseBalance(String userName, Integer value) {
+		return dao.increaseBalance(userName, value);
+	}
 }

@@ -155,6 +155,27 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 			}
 		}
 		return categorizedProducts;
+	}
+	@Override
+	public String getBalance(String userName) {
+		String balance="0";
+		for (Customer customer : customers) {
+			if (customer.getName().equals(userName)){
+				balance=Integer.toString(customer.getBalance());
+			}
+		}
+		return balance;
+	}
+	@Override
+	public boolean increaseBalance(String userName, Integer value) {
+		boolean rvIsValide = false;
+		for (Customer customer : customers) {
+			if (customer.getName().equals(userName)){
+				customer.setBalance(customer.getBalance()+value);
+				rvIsValide = true;
+			}
+		}
+		return rvIsValide;
 	} 
 	
 	

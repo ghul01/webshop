@@ -19,6 +19,7 @@ public class Labels {
     public final static String error = "Error";
     public final static String empty = "";
     public final static String unknown = "Unknown";
+    public final static String exit = "Kilépés";
 	
 	// Main Window
 	public static final String main_window_title_format = "Web Shop (%1$s)";
@@ -29,6 +30,7 @@ public class Labels {
     public final static String log_in = "Bejelentkezés";
     public final static String customer_not_exists = "A felhasználó nem található, ellenõrizd a megadott adatokat!";
     public final static String customer_already_logged_in = "Már be vagy jelentkezve!";
+    public final static String customer_not_logged_in = "Még nem vagy bejelentkezve!";
     
     // Log out labels
     public final static String log_out = "Kijelentkezés";
@@ -57,6 +59,9 @@ public class Labels {
     public final static String regular_customer = "Törzsvásárló";
     public final static String home_address = "Lakcím";
     public final static String city_address = "Irányítószám";
+    public final static String increase_balance = "Egyenleg feltöltése";
+    public final static String increasement_not_negative = "Adj meg nagyobb összeget!";
+    public final static String balance_increasement_error = "Hiba az egyenleg feltöltésnél!";
     
     // Product labels
     public final static String product_id = "ID";
@@ -64,4 +69,6 @@ public class Labels {
     public final static String product_unit_price = "egység ár";
     public final static String product_stock = "Készlet";
     public final static String product_category = "Kategória";
+    
+    
 }

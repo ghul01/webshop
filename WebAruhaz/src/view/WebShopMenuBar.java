@@ -11,7 +11,7 @@ import javax.swing.*;
 
 import model.bean.Product;
 import model.bean.Category;
-
+import view.dialogs.BalanceCheckDialog;
 import view.dialogs.LogInDialog;
 import view.dialogs.LogOutDialog;
 import view.dialogs.SignInDialog;
@@ -32,8 +32,11 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 		super();
 		this.gui = gui;
 		
-		createMenuPoint(Labels.user, Labels.log_in, Labels.sign_in, Labels.log_out);
+		createMenuPoint(Labels.user, Labels.log_in, Labels.balance, Labels.sign_in, Labels.log_out);
 		createStoreMenuPoint();
+		JMenuItem exit = new JMenuItem(Labels.exit);
+		add(exit);
+		exit.addActionListener(this);
 	}
 
     private void createStoreMenuPoint() {
@@ -82,6 +85,7 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
+		System.out.println(actionCommand);
 		if (actionCommand.equals(Labels.list_all_product)) {
 			List<Product> products = gui.getController().getProducts();
 			
@@ -91,7 +95,7 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 			
 			gui.setActualContent(container);
 		} else if (actionCommand.equals(Labels.list_new_products)) {
-			
+			// TODO új termékek megjelenítése
 		} else if (actionCommand.equals(Labels.log_in)){
 			if (Main.getUsername()==null){
 			new LogInDialog(gui,true);
@@ -105,10 +109,30 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 					return;
 			}
 		} else if (actionCommand.equals(Labels.log_out)){
+			if (Main.getUsername()!=null){
 			new LogOutDialog(gui,true);
 			gui.updateTitle();
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
 		} else if (actionCommand.equals(Labels.sign_in)){
 			new SignInDialog(gui, true);
+		} else if(actionCommand.equals(Labels.balance)) {
+			if (Main.getUsername()!=null){
+				new BalanceCheckDialog(gui,true);
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
 		} else for (Category category : gui.getController().getCategories()) {
 			if (actionCommand.equals(category.getName())){
 				List<Product> products = gui.getController().getProductsByCategory(category);
@@ -121,7 +145,9 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 				break;
 			}
 		}
-		System.out.println(actionCommand);
+		if(actionCommand.equals(Labels.exit)) {
+			System.exit(0);
+		}
 		// TODO Auto-generated method stub
 
 	}
