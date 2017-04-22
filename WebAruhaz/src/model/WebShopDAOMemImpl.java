@@ -36,6 +36,46 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 			setZip_code("6800");
 		}});
 		}};
+	
+	@SuppressWarnings("serial")
+	public List<Category> categories = new ArrayList<Category>(){{
+		add(new Category(){{
+			setName("Könyvek");
+		}});
+		add(new Category(){{
+			setName("Szórakozás");
+		}});
+		add(new Category(){{
+			setName("Elektronika");
+		}});
+		add(new Category(){{
+			setName("Kertészkedés");
+		}});
+		add(new Category(){{
+			setName("Szépség ápolás");
+		}});
+		add(new Category(){{
+			setName("Egészség");
+		}});
+		add(new Category(){{
+			setName("Gyerek játékok");
+		}});
+		add(new Category(){{
+			setName("Öltözködés");
+		}});
+		add(new Category(){{
+			setName("Ékszerek");
+		}});
+		add(new Category(){{
+			setName("Saját készítésû");
+		}});
+		add(new Category(){{
+			setName("Sport");
+		}});
+		add(new Category(){{
+			setName("Jármû");
+		}});
+	}};
 	/**
 	 * Hozzáad egy {@link Customer}-t az adattárhoz.
      *
@@ -84,6 +124,10 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 	@Override
 	public List<City> getCities() {
 		return cities;
+	}
+	@Override
+	public List<Category> getCategories() {
+		return categories;
 	} 
 	
 	

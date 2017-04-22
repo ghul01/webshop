@@ -28,6 +28,7 @@ public class Labels {
     public final static String user = "Felhasználó";
     public final static String log_in = "Bejelentkezés";
     public final static String customer_not_exists = "A felhasználó nem található, ellenõrizd a megadott adatokat!";
+    public final static String customer_already_logged_in = "Már be vagy jelentkezve!";
     
     // Log out labels
     public final static String log_out = "Kijelentkezés";
@@ -42,6 +43,12 @@ public class Labels {
     public final static String customer_city_address_is_required = "Irányítószámot meg kell adni!";
     public final static String customer_exists = "Már regisztráltak ezzel a felhasználó névvel!";
     public final static String re_enter_password = "Jelszó még egyszer";
+    
+    // Store labels
+    public final static String store = "Áruház";
+    public final static String list_all_product = "Teljes Választék";
+    public final static String list_new_products = "Újdonságok";
+    public final static String list_by_categories = "Kategóriák";
     
     // Customer labels    
     public final static String user_name = "Felhasználó név";

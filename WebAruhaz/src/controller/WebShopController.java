@@ -6,6 +6,7 @@ package controller;
 import java.util.List;
 
 import model.*;
+import model.bean.Category;
 import model.bean.City;
 import model.bean.Customer;
 import view.WebShopGUI;
@@ -43,5 +44,7 @@ public class WebShopController {
 	public List<City> getCities(){
 		return dao.getCities();
 	}
-	
+	public List<Category> getCategories(){
+		return dao.getCategories();
+	}
 }
