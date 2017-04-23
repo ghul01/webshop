@@ -22,4 +22,5 @@ public interface WebShopDAO {
 	public boolean increaseBalance(String userName, Integer value);
 	public boolean findProductById(int id);
 	public boolean addPorductToCartById(String userName, int id, int piece);
+	public List<Cart> getUsersCart(String userName);
 }

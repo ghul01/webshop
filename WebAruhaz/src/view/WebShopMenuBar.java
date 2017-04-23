@@ -5,17 +5,20 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
 
 import model.bean.Product;
+import model.bean.Cart;
 import model.bean.Category;
 import view.dialogs.AddToCartDialog;
 import view.dialogs.BalanceCheckDialog;
 import view.dialogs.LogInDialog;
 import view.dialogs.LogOutDialog;
 import view.dialogs.SignInDialog;
+import view.tablemodels.CartTableModel;
 import view.tablemodels.ProductTableModel;
 
 import webshop.Main;
@@ -115,7 +118,13 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 			}
 		} else if (actionCommand.equals(Labels.cart_list)){
 			if (Main.getUsername()!=null){
-				// TODO 
+				List<Cart> carts = gui.getController().getUsersCart(Main.getUsername());
+				
+				JTable table = new JTable(new CartTableModel(carts));
+				
+				JScrollPane container = new JScrollPane(table);
+				
+				gui.setActualContent(container);
 				
 			} else {
 				JOptionPane.showMessageDialog(

@@ -208,6 +208,16 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 			rvIsValide = true;
 		}
 		return rvIsValide;
+	}
+	@Override
+	public List<Cart> getUsersCart(String userName) {
+		List<Cart> usersCart = new ArrayList<Cart>();
+		for (Cart cart : carts) {
+			if (cart.getUserName().equals(userName)) {
+				usersCart.add(cart);
+			}
+		}
+		return usersCart;
 	} 
 	
 	

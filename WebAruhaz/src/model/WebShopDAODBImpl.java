@@ -4,7 +4,7 @@ import java.util.List;
 import java.sql.*;
 import oracle.jdbc.*;
 import oracle.jdbc.pool.OracleDataSource;
-
+import model.bean.Cart;
 import model.bean.Category;
 import model.bean.City;
 import model.bean.Customer;
@@ -72,5 +72,11 @@ public class WebShopDAODBImpl implements WebShopDAO {
 	public boolean addPorductToCartById(String userName, int id, int piece) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Cart> getUsersCart(String userName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

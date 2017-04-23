@@ -6,6 +6,7 @@ package controller;
 import java.util.List;
 
 import model.*;
+import model.bean.Cart;
 import model.bean.Category;
 import model.bean.City;
 import model.bean.Customer;
@@ -65,5 +66,8 @@ public class WebShopController {
 	}
 	public boolean addPorductToCartById(String userName,int id, int piece){
 		return dao.addPorductToCartById(userName, id, piece);
+	}
+	public List<Cart> getUsersCart(String userName) {
+		return dao.getUsersCart(userName);
 	}
 }

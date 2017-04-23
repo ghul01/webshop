@@ -21,7 +21,7 @@ public class ProductTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 6300331383535466024L;
 
 	private String[] columnNames = new String[] {
-			Labels.product_id,
+			Labels.id,
 			Labels.product_name,
 			Labels.product_unit_price,
 			Labels.product_stock,
@@ -72,7 +72,7 @@ public class ProductTableModel extends AbstractTableModel {
 		Product product = products.get(row);
 		String askedColumnName = columnNames[col];
 		
-		if (askedColumnName.equals(Labels.product_id)){
+		if (askedColumnName.equals(Labels.id)){
 			return product.getProduct_id();
 		} else if (askedColumnName.equals(Labels.product_name)){
 			return product.getProduct_name();

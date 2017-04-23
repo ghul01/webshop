@@ -65,7 +65,7 @@ public class AddToCartDialog extends JDialog implements ActionListener {
 		JPanel settingPanel = new JPanel();
 		settingPanel.setLayout(new GridLayout(4, 1));
 
-		settingPanel.add(new JLabel(Labels.product_id));
+		settingPanel.add(new JLabel(Labels.id));
 		settingPanel.add(idTextField);
 		
 		settingPanel.add(new JLabel(Labels.piece));

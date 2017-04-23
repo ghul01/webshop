@@ -79,12 +79,13 @@ public class Labels {
     public final static String balance_increasement_error = "Hiba az egyenleg feltöltésnél!";
     
     // Product labels
-    public final static String product_id = "ID";
+    public final static String product = "Termék";
+    public final static String id = "ID";
     public final static String product_name = "Termék név";
     public final static String product_unit_price = "egység ár";
     public final static String product_stock = "Készlet";
     public final static String product_category = "Kategória";
-    public static final String product_not_found = "A termék nem található!";
+    public final static String product_not_found = "A termék nem található!";
     
     
 }

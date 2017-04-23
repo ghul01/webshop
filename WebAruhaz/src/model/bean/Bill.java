@@ -7,6 +7,7 @@ public class Bill {
 	private	int cart_id;
 	private LocalDate date;
 	private double amount;
+	private boolean delivered;
 	/**
 	 * @return the user_name
 	 */
@@ -54,5 +55,17 @@ public class Bill {
 	 */
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	/**
+	 * @return the delivered
+	 */
+	public boolean isDelivered() {
+		return delivered;
+	}
+	/**
+	 * @param delivered the delivered to set
+	 */
+	public void setDelivered(boolean delivered) {
+		this.delivered = delivered;
 	}
 }
