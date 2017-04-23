@@ -60,4 +60,10 @@ public class WebShopController {
 	public boolean increaseBalance(String userName, Integer value) {
 		return dao.increaseBalance(userName, value);
 	}
+	public boolean findProductById(int id){
+		return dao.findProductById(id);
+	}
+	public boolean addPorductToCartById(String userName,int id, int piece){
+		return dao.addPorductToCartById(userName, id, piece);
+	}
 }

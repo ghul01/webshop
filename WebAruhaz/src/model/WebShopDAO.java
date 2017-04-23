@@ -20,4 +20,6 @@ public interface WebShopDAO {
 	public List<Product> getProductsByCategory(Category category);
 	public String getBalance(String userName);
 	public boolean increaseBalance(String userName, Integer value);
+	public boolean findProductById(int id);
+	public boolean addPorductToCartById(String userName, int id, int piece);
 }

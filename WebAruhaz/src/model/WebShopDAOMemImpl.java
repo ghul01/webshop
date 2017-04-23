@@ -88,6 +88,8 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 		}});
 	}};
 	
+	public List<Cart> carts = new ArrayList<Cart>();
+	
 	
 	/**
 	 * Hozzáad egy {@link Customer}-t az adattárhoz.
@@ -174,6 +176,36 @@ public class WebShopDAOMemImpl implements WebShopDAO {
 				customer.setBalance(customer.getBalance()+value);
 				rvIsValide = true;
 			}
+		}
+		return rvIsValide;
+	}
+	@Override
+	public boolean findProductById(int id) {
+		boolean rvIsValide = false;
+		for (Product product: products) {
+			if (product.getProduct_id() == id){
+				rvIsValide = true;
+			}
+		}
+		return rvIsValide;
+	}
+	@Override
+	public boolean addPorductToCartById(String userName, int id, int piece) {
+		boolean rvIsValide = false;
+		for (Cart cart : carts) {
+			if (cart.getUserName().equals(userName)&&cart.getProduct_id()==id) { // TODO cart id
+				cart.setPiece(cart.getPiece()+piece);
+				rvIsValide = true;
+				break;
+			}
+		}
+		if (!rvIsValide){
+			Cart cart = new Cart();
+			cart.setUserName(userName);
+			cart.setProduct_id(id);
+			cart.setPiece(piece);
+			carts.add(cart);
+			rvIsValide = true;
 		}
 		return rvIsValide;
 	} 

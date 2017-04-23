@@ -11,6 +11,7 @@ import javax.swing.*;
 
 import model.bean.Product;
 import model.bean.Category;
+import view.dialogs.AddToCartDialog;
 import view.dialogs.BalanceCheckDialog;
 import view.dialogs.LogInDialog;
 import view.dialogs.LogOutDialog;
@@ -32,8 +33,23 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 		super();
 		this.gui = gui;
 		
-		createMenuPoint(Labels.user, Labels.log_in, Labels.balance, Labels.sign_in, Labels.log_out);
+		createMenuPoint(
+				Labels.user,
+				Labels.log_in,
+				Labels.balance,
+				Labels.sign_in,
+				Labels.log_out);
 		createStoreMenuPoint();
+		createMenuPoint(
+				Labels.cart,
+				Labels.cart_add_id,
+				Labels.cart_list, 
+				Labels.cart_pruchase);
+		createMenuPoint(Labels.bill,
+				Labels.bill_list_all,
+				Labels.bill_list_under_transport, 
+				Labels.bill_list_transported);
+		
 		JMenuItem exit = new JMenuItem(Labels.exit);
 		add(exit);
 		exit.addActionListener(this);
@@ -86,7 +102,78 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
 		System.out.println(actionCommand);
-		if (actionCommand.equals(Labels.list_all_product)) {
+		if (actionCommand.equals(Labels.cart_add_id)){
+			if (Main.getUsername()!=null){
+				new AddToCartDialog(gui, true);
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+		} else if (actionCommand.equals(Labels.cart_list)){
+			if (Main.getUsername()!=null){
+				// TODO 
+				
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+		} else if (actionCommand.equals(Labels.cart_pruchase)){
+			if (Main.getUsername()!=null){
+				// TODO 
+				
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+		} else if (actionCommand.equals(Labels.bill_list_all)) {
+			if (Main.getUsername()!=null){
+				// TODO 
+				
+				} else {
+					JOptionPane.showMessageDialog(
+							gui.getWindow(),
+							Labels.customer_not_logged_in,
+							Labels.error,
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+		} else if (actionCommand.equals(Labels.bill_list_under_transport)) {
+			if (Main.getUsername()!=null){
+				// TODO 
+				
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+		} else if (actionCommand.equals(Labels.bill_list_transported)) {
+			if (Main.getUsername()!=null){
+				// TODO 
+				
+			} else {
+				JOptionPane.showMessageDialog(
+						gui.getWindow(),
+						Labels.customer_not_logged_in,
+						Labels.error,
+						JOptionPane.ERROR_MESSAGE);
+				return;
+			}
+		} else if (actionCommand.equals(Labels.list_all_product)) {
 			List<Product> products = gui.getController().getProducts();
 			
 			JTable table = new JTable(new ProductTableModel(products));
@@ -96,6 +183,7 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 			gui.setActualContent(container);
 		} else if (actionCommand.equals(Labels.list_new_products)) {
 			// TODO új termékek megjelenítése
+			
 		} else if (actionCommand.equals(Labels.log_in)){
 			if (Main.getUsername()==null){
 			new LogInDialog(gui,true);

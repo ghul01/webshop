@@ -9,8 +9,9 @@ package model.bean;
  */
 public class Cart {
 	private int id;
-	private int user_id;
+	private String userName;
 	private int product_id;
+	private int piece;
 	/**
 	 * @return the id
 	 */
@@ -26,14 +27,14 @@ public class Cart {
 	/**
 	 * @return the user_id
 	 */
-	public int getUser_id() {
-		return user_id;
+	public String getUserName() {
+		return userName;
 	}
 	/**
 	 * @param user_id the user_id to set
 	 */
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	/**
 	 * @return the product_id
@@ -46,5 +47,17 @@ public class Cart {
 	 */
 	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
+	}
+	/**
+	 * @return the piece
+	 */
+	public int getPiece() {
+		return piece;
+	}
+	/**
+	 * @param piece the piece to set
+	 */
+	public void setPiece(int piece) {
+		this.piece = piece;
 	}
 }

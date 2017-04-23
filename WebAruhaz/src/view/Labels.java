@@ -52,6 +52,21 @@ public class Labels {
     public final static String list_new_products = "Újdonságok";
     public final static String list_by_categories = "Kategóriák";
     
+    // Cart labels
+    public static final String cart = "Kosár";
+    public static final String cart_add_id = "Termék kosárba helyezése";
+    public static final String cart_list = "Kosár tartalmának megjelenítése";
+    public static final String cart_pruchase = "Fizetés";
+    public static final String piece = "Darab";
+    public static final String piece_error = "Nem megfelelõ mennyiség!";
+    public static final String cart_add_product_error = "Hiba a termék kosárba helyezése közben!";
+    
+    // Bill labels
+    public static final String bill = "Számla";
+    public static final String bill_list_all = "Összes";
+    public static final String bill_list_under_transport = "Kiszállítás alatt lévõ";
+    public static final String bill_list_transported = "Kiszállítva";
+    
     // Customer labels    
     public final static String user_name = "Felhasználó név";
     public final static String password = "Jelszó";
@@ -69,6 +84,7 @@ public class Labels {
     public final static String product_unit_price = "egység ár";
     public final static String product_stock = "Készlet";
     public final static String product_category = "Kategória";
+    public static final String product_not_found = "A termék nem található!";
     
     
 }

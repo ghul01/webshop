@@ -61,4 +61,16 @@ public class WebShopDAODBImpl implements WebShopDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public boolean findProductById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addPorductToCartById(String userName, int id, int piece) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
