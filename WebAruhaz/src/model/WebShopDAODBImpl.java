@@ -24,7 +24,6 @@ public class WebShopDAODBImpl implements WebShopDAO {
 		// TODO Auto-generated method stub
 		return false;
 	}
-//TODO Implementálás
 
 	@Override
 	public List<City> getCities() {
