@@ -7,7 +7,8 @@ import controller.WebShopController;
 
 /**
  * @author Attila
- *
+ * kappa Norbert w
+ *ffff
  */
 public class Main {
 
