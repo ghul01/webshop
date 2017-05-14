@@ -22,7 +22,22 @@ public class WebShopDAODBImpl implements WebShopDAO {
 			e.printStackTrace();
 		}
 	}
-	
+	public boolean doTheSQL(String sql){
+		try {
+		OracleDataSource ods = new OracleDataSource();
+	    ods.setURL("jdbc:oracle:thin:hr/hr@//orania.inf.u-szeged.hu:1521/kabinet");
+	    Connection conn = ods.getConnection("HR","HR");
+	    Statement st = conn.createStatement();
+			System.out.println( sql );
+			st.executeUpdate("INSERT INTO Customers " + 
+	                "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
+			conn.close();
+			return true;
+		}catch ( SQLException ex ) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 	@Override
 	public boolean signUpCustomer(Customer customer) {
 		// TODO Auto-generated method stub
