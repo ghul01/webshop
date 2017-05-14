@@ -29,8 +29,7 @@ public class WebShopDAODBImpl implements WebShopDAO {
 	    Connection conn = ods.getConnection("HR","HR");
 	    Statement st = conn.createStatement();
 			System.out.println( sql );
-			st.executeUpdate("INSERT INTO Customers " + 
-	                "VALUES (1001, 'Simpson', 'Mr.', 'Springfield', 2001)");
+			st.executeUpdate(sql);
 			conn.close();
 			return true;
 		}catch ( SQLException ex ) {
