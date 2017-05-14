@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import oracle.jdbc.*;
@@ -36,32 +37,37 @@ public class WebShopDAODBImpl implements WebShopDAO {
 
 	@Override
 	public List<City> getCities() {
+		List<City> cities = new ArrayList<City>();
 		// TODO Auto-generated method stub
-		return null;
+		return cities;
 	}
 
 	@Override
 	public List<Category> getCategories() {
+		List<Category> categories = new ArrayList<Category>();
 		// TODO Auto-generated method stub
-		return null;
+		return categories;
 	}
 
 	@Override
 	public List<Product> getProducts() {
+		List<Product> products = new ArrayList<Product>();
 		// TODO Auto-generated method stub
-		return null;
+		return products;
 	}
 
 	@Override
 	public List<Product> getProductsByCategory(Category category) {
+		List<Product> products = new ArrayList<Product>();
 		// TODO Auto-generated method stub
-		return null;
+		return products;
 	}
 
 	@Override
 	public String getBalance(String userName) {
+		String rvBalance = "0";
 		// TODO Auto-generated method stub
-		return null;
+		return rvBalance;
 	}
 
 	@Override
@@ -84,7 +90,8 @@ public class WebShopDAODBImpl implements WebShopDAO {
 
 	@Override
 	public List<Cart> getUsersCart(String userName) {
+		List<Cart> carts = new ArrayList<Cart>();
 		// TODO Auto-generated method stub
-		return null;
+		return carts;
 	}
 }
