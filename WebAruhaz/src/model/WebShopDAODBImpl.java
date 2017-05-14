@@ -13,6 +13,15 @@ import model.bean.Product;
 @SuppressWarnings("unused")
 public class WebShopDAODBImpl implements WebShopDAO {
 
+	public WebShopDAODBImpl() {
+		try{
+			Class.forName("oracle.jdbc.OracleDriver");
+		} catch (ClassNotFoundException e){
+			System.err.println("Nem sikerült betölteni a OJDBC drivet-t.");
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public boolean signUpCustomer(Customer customer) {
 		// TODO Auto-generated method stub

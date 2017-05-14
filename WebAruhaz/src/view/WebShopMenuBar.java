@@ -112,7 +112,7 @@ public class WebShopMenuBar extends JMenuBar implements ActionListener {
 						gui.getWindow(),
 						Labels.customer_not_logged_in,
 						Labels.error,
-						JOptionPane.ERROR_MESSAGE);
+						JOptionPane.ERROR_MESSAGE); 
 				return;
 			}
 		} else if (actionCommand.equals(Labels.cart_list)){
