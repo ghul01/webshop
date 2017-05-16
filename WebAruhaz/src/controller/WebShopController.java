@@ -23,7 +23,7 @@ import webshop.Main;
  * köti össze. Itt található az üzleti logika (business logic) is.
  */
 public class WebShopController {
-	private WebShopDAO dao = new WebShopDAOMemImpl();
+	private WebShopDAO dao = new WebShopDAODBImpl();
 	
 	/**
 	 * Elindítja Az alkalmazás desktopra specializált user interface-ét.

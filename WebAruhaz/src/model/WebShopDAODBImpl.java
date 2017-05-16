@@ -25,9 +25,9 @@ public class WebShopDAODBImpl implements WebShopDAO {
 	public boolean doTheSQL(String sql){
 		try {
 		OracleDataSource ods = new OracleDataSource();
-	    ods.setURL("jdbc:oracle:thin:hr/hr@//orania.inf.u-szeged.hu:1521/kabinet");
-	    Connection conn = ods.getConnection("HR","HR");
-	    Statement st = conn.createStatement();
+	    ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+	    Connection conn = ods.getConnection("SYSTEM","SYSTEM");
+	    Statement st = conn.prepareStatement(sql);
 			System.out.println( sql );
 			st.executeUpdate(sql);
 			conn.close();
@@ -39,20 +39,61 @@ public class WebShopDAODBImpl implements WebShopDAO {
 	}
 	@Override
 	public boolean signUpCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean rvSucces = false;
+		
+		for(City city:getCities()){
+			String sql="";
+			if (city.getZip_code().equals(customer.getCity_address()))
+				sql = "INSERT INTO FELHASZNALOK(NEV, JELSZO, LAKCIM, VAROS_NEV) VALUES ('"+
+					customer.getName()+"','"+
+					customer.getPassword()+"','"+
+					customer.getHome_address()+"','"+
+					city.getCity_name()+"')";
+			rvSucces = doTheSQL(sql);
+		}
+		return rvSucces;
 	}
 
 	@Override
 	public boolean logInCustomer(Customer customer) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean rvSucces = false;
+		String sql = "SELECT COUNT(*) FROM FELHASZNALOK WHERE NEV='"+customer.getName()+"' AND JELSZO='"+customer.getPassword()+"'";
+		rvSucces=doTheSQL(sql);
+		return rvSucces;
 	}
 
 	@Override
 	public List<City> getCities() {
 		List<City> cities = new ArrayList<City>();
-		// TODO Auto-generated method stub
+		Connection conn;
+		OracleDataSource ods;
+		PreparedStatement pst;
+		ResultSet rs;
+		try {
+			ods = new OracleDataSource(); 
+			Class.forName("oracle.jdbc.OracleDriver");
+			ods.setURL("jdbc:oracle:thin:@localhost:1521:xe");
+			conn = ods.getConnection("SYSTEM", "SYSTEM");
+
+			String szkript = "SELECT * FROM VAROS";
+			
+			pst = conn.prepareStatement(szkript);
+			rs = pst.executeQuery();		
+			while(rs.next()){
+				City city = new City();
+				city.setCity_name(rs.getString("V_NEV"));
+				city.setZip_code(rs.getString("IRSZ"));
+				
+				System.out.println(city.getCity_name() + " " + city.getZip_code());
+					
+				cities.add(city);
+			}
+			
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		} 
+		
 		return cities;
 	}
 
