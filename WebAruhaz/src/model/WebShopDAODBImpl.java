@@ -14,11 +14,16 @@ import model.bean.Product;
 @SuppressWarnings("unused")
 public class WebShopDAODBImpl implements WebShopDAO {
 
+	private Connection connN;
+	private OracleDataSource odsN;
+	private PreparedStatement pstN;
+	private ResultSet rsN;
+	
 	public WebShopDAODBImpl() {
 		try{
 			Class.forName("oracle.jdbc.OracleDriver");
 		} catch (ClassNotFoundException e){
-			System.err.println("Nem sikerült betölteni a OJDBC drivet-t.");
+			System.err.println("Nem sikerÃ¼lt betÃ¶lteni a OJDBC drivet-t.");
 			e.printStackTrace();
 		}
 	}
