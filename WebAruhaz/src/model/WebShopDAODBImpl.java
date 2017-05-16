@@ -13,11 +13,6 @@ import model.bean.Product;
 
 @SuppressWarnings("unused")
 public class WebShopDAODBImpl implements WebShopDAO {
-
-	private Connection connN;
-	private OracleDataSource odsN;
-	private PreparedStatement pstN;
-	private ResultSet rsN;
 	
 	public WebShopDAODBImpl() {
 		try{
